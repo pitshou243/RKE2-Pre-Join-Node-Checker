@@ -21,7 +21,7 @@ echo "====================================="
 # firewalld
 if systemctl list-unit-files firewalld.service >/dev/null 2>&1; then
   if systemctl is-active --quiet firewalld.service; then
-    fail "firewalld is active. RKE2 docs recommend disabling it with default Canal networking."
+    fail "firewalld is active. RKE2 docs recommend disabling it."
     echo "       Suggested: systemctl disable --now firewalld"
   else
     pass "firewalld is installed but not active."
